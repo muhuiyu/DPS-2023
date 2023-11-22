@@ -1,27 +1,48 @@
-# React + TypeScript + Vite
+# Password Validation Project (DPS Technical Challenge)
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This password validation tool is built with React (TypeScript), Vite, and Bun for the Digital Product School (DPS) technical challenge.
 
-Currently, two official plugins are available:
+The challenge spec is as follows:
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+```
+Password validator.
 
-## Expanding the ESLint configuration
+Create a web page for validation of passwords entered by users. The rules for a valid password are the following:
+- it should have the length of 8-16 symbols
+- it should contain letters of latin alphabet and at least one digit
+- it should not contain full english words (you can use any free dictionary API to check this)
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
-
-- Configure the top-level `parserOptions` property like this:
-
-```js
-   parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-   },
 ```
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+## Getting Started
+
+- To run the project in development mode, clone and enter the repository, and use the Bun tool with the following command:
+
+```
+bun install
+bun dev
+```
+
+## Solution
+
+To solve this challenge, I aimed for simplicity and efficiency. Since the submit function was not mentioned in the challenge spec, the scope of this project was kept to solely building the front-end. No backend implementation was developed for this challenge.
+
+The main page is `PasswordPage.tsx`. As soon as the user begins typing in the password field, the input is validated immediately. I did try adding a debounce for checking, but immediate feedback provides a better user experience - especially since I reduced the dictionary size to only the most common 10,000 words. I also pre-downloaded the dictionary into the app and converted it to JSON to avoid calling async functions, which increases speed.
+
+The first two password rules are quite straightforward while the third rule is more challenging to me. I initially tried using a word list file from [List Of English Words](https://github.com/dwyl/english-words/) as the dictionary for validation. However, this list included every single character (like a, b, c, d...) and various couple character strings (like aa, ac) as words, which was not practical for our purpose.
+
+Instead, I switched the dictionary to [google-10000-english](https://github.com/first20hours/google-10000-english). This text file contains the most frequently used 10,000 English words in USA spelling, offering a more practical dictionary to validate user passwords. I also provided the script (`script.js`) I used for converting txt to json file.
+
+## Reflections and Recommendations
+
+Through the process of creating this password validation system, I was thinking of the balance between ensuring user security and providing a user-friendly experience.
+
+Using a word dictionary for password validation has its trade-offs. It discourages using common words, but depending on the dictionary source we choose, it can be overly restrictive (e.g. "ca" and "mu" are still included in [google-10000-english](https://github.com/first20hours/google-10000-english)), and sometimes these combinations may not really make passwords "weak".
+
+In my experience, using a dictionary can lead to frequent flagging of simple character combinations as 'words'. For a more practical and user-friendly experience, I suggest using either a shorter list, such as the most common 1,500 words, or adding more specific rules, such special characters, must be at least one uppercase and one lowercase character, etc. Since I believe the goal, eventually, is to help users create secure passwords as intuitive as possible.
+
+## Note
+
+If you have any questions, feel free to contact me via muhuiyu.grace@gmail.com.
+
+Thank you in advance for reviewing this project!

@@ -1,6 +1,6 @@
 import { QueryClient, QueryClientProvider } from "react-query";
 import "./App.css";
-import PasswordPage from "./PasswordPage";
+import PasswordPage from "./screens/PasswordPage";
 
 const queryClient = new QueryClient();
 function App() {
