@@ -14,6 +14,10 @@ Create a web page for validation of passwords entered by users. The rules for a 
 
 ```
 
+## Screenshot
+<img width="1391" alt="Screenshot 2023-11-22 at 10 17 09 PM" src="https://github.com/muhuiyu/DPS-2023/assets/42035587/cfe8aa98-975c-47e4-afc1-ab745854cee7">
+
+
 ## Getting Started
 
 - To run the project in development mode, clone and enter the repository, and use the Bun tool with the following command:
