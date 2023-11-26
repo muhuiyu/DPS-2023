@@ -1,14 +1,13 @@
-import { QueryClient, QueryClientProvider } from "react-query";
-import "./App.css";
-import PasswordPage from "./screens/PasswordPage";
+import { QueryClient, QueryClientProvider } from 'react-query'
+import PasswordPage from './screens/PasswordPage'
 
-const queryClient = new QueryClient();
+const queryClient = new QueryClient()
 function App() {
   return (
     <QueryClientProvider client={queryClient}>
       <PasswordPage />
     </QueryClientProvider>
-  );
+  )
 }
 
-export default App;
+export default App

@@ -57,6 +57,14 @@ Using a word dictionary for password validation has its trade-offs. It discourag
 
 In my experience, using a dictionary can lead to frequent flagging of simple character combinations as 'words'. For a more practical and user-friendly experience, I suggest using either a shorter list, such as the most common 1,500 words, or adding more specific rules, such special characters, must be at least one uppercase and one lowercase character, etc. Since I believe the goal, eventually, is to help users create secure passwords as intuitive as possible.
 
+Some future improvements we could try are:
+
+- Add localization using i18n-js (https://www.npmjs.com/package/i18n-js)
+- Decouple the validation modules from UI completely so it can be reused in various platforms
+- Add password validation logics to backend
+- Update UI to make colors with better accessibility
+- and more ...
+
 ## Note
 
 If you have any questions, feel free to contact me via muhuiyu.grace@gmail.com.
