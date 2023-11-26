@@ -20,11 +20,23 @@ Create a web page for validation of passwords entered by users. The rules for a 
 
 ## Getting Started
 
-- To run the project in development mode, clone and enter the repository, and use the Bun tool with the following command:
+- To run the project in development mode, clone and enter the repository, and use the [Bun](https://bun.sh/) tool with the following command:
 
 ```
 bun install
 bun dev
+```
+
+- Optional: to install [Bun](https://bun.sh/), use the following command:
+
+```
+curl -fsSL https://bun.sh/install | bash
+```
+
+- Optional: to run the test, use the following command:
+
+```
+npx vitest
 ```
 
 ## Solution
