@@ -15,8 +15,8 @@ Create a web page for validation of passwords entered by users. The rules for a 
 ```
 
 ## Screenshot
-<img width="1391" alt="Screenshot 2023-11-22 at 10 17 09 PM" src="https://github.com/muhuiyu/DPS-2023/assets/42035587/cfe8aa98-975c-47e4-afc1-ab745854cee7">
 
+<img width="1391" alt="Screenshot 2023-11-22 at 10 17 09 PM" src="https://github.com/muhuiyu/DPS-2023/assets/42035587/cfe8aa98-975c-47e4-afc1-ab745854cee7">
 
 ## Getting Started
 
@@ -35,7 +35,7 @@ The main page is `PasswordPage.tsx`. As soon as the user begins typing in the pa
 
 The first two password rules are quite straightforward while the third rule is more challenging to me. I initially tried using a word list file from [List Of English Words](https://github.com/dwyl/english-words/) as the dictionary for validation. However, this list included every single character (like a, b, c, d...) and various couple character strings (like aa, ac) as words, which was not practical for our purpose.
 
-Instead, I switched the dictionary to [google-10000-english](https://github.com/first20hours/google-10000-english). This text file contains the most frequently used 10,000 English words in USA spelling, offering a more practical dictionary to validate user passwords. I also provided the script (`script.js`) I used for converting txt to json file.
+Instead, I switched the dictionary to [google-10000-english](https://github.com/first20hours/google-10000-english). This text file contains the most frequently used 10,000 English words in USA spelling, offering a more practical dictionary to validate user passwords. I also provided the script (`script.js`) I used for converting txt to json file. I also removed words with only single or couple character strings (like a, rl) in validation rules for a better user experience.
 
 ## Reflections and Recommendations
 

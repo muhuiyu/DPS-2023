@@ -3,7 +3,7 @@ import wordListData from "../data/google-10000-english-usa.json";
 const wordList = (wordListData as { data: string[] }).data;
 const lowerCaseWordList = wordList
   .map((word) => word.toLowerCase())
-  .filter((word) => word.length <= 16 && word.length > 1);
+  .filter((word) => word.length <= 16 && word.length > 2); // filter word length in between 3-16 characters
 
 const wordSet = new Set(lowerCaseWordList);
 
